@@ -37,7 +37,7 @@ Donde  r_{pinion} será el radio del piñón.
 
 Cómo formula matemática sería: Inercia del Piñón + Inercia de la carga + Inercia del carro 
 
-$$J_{ref}= J_{pinion}+\frac{1}{\eta(N^{2}_{RP})}(\frac{W_{L}+W_{C}}{g})$$
+$$J_{ref}= J_{pinion}+\frac{1}{\eta(N^{2})_{RP}}(\frac{W_{L}+W_{C}}{g})$$
 
 * η: Eficiencia (típicamente 0.8 - 0.9 para buena eficiencia en el sistema; = 1 en ideal).
 * $$W_{C}$$ es el peso de la cremallera
