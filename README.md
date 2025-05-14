@@ -59,6 +59,11 @@ $$N_{BD}= \frac{1}{R_{IP}}; V_{belt}= r_{IP}* w_{IP}$$
 $$r_{IP}$$ Es el radio de la polea de entrada, es decir, la que es motriz. 
 
 ### 1.3.2 Inercia reflejada
-Considera inercias de poleas (2 poleas existentes en el sistema), de la banda y de la carga.
+Considera inercias de poleas (2 poleas existentes en el sistema), de la banda, la carga y el carro.
 
 $$J_{ref}= 2J_{P}+\frac{1}{\eta(N^{2}_{RP})}(\frac{W_{L}+W_{C}}{g})$$
+
+### 1.3.3 Torque de carga 
+Se presenta igual que con el tornillo guia y el sistema piñón-cremallera 
+
+$$T_{load\to in}=\frac{F_{ext}}{\eta N_{BD}}$$
