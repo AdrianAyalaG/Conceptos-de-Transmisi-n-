@@ -48,7 +48,7 @@ Donde $$r_{pinion}$$ será el radio del piñón.
 
 Cómo formula matemática sería: Inercia del Piñón + Inercia de la carga + Inercia del carro 
 
-$$J_{ref}= J_{pinion}+\frac{1}{\eta(N^{2})_{RP}}(\frac{W_{L}+W_{C}}{g})$$
+$$J_{ref}= J_{pinion}+\frac{1}{\eta*N^{2}_{RP}}(\frac{W_{L}+W_{C}}{g})$$
 
 * η: Eficiencia (típicamente 0.8 - 0.9 para buena eficiencia en el sistema; = 1 en ideal).
 * $$W_{C}$$ es el peso de la cremallera
@@ -72,7 +72,6 @@ $$r_{IP}$$ Es el radio de la polea de entrada, es decir, la que es motriz.
 ### 2.3.2 Inercia reflejada
 Considera inercias de poleas (2 poleas existentes en el sistema), de la banda, la carga y el carro.
 
-$$J_{ref}= 2J_{P}+\frac{1}{\eta(N^{2}_{RP})}(\frac{W_{L}+W_{C}}{g})$$
 
 ### 2.3.3 Torque de carga 
 Se presenta igual que con el tornillo guia y el sistema piñón-cremallera 
