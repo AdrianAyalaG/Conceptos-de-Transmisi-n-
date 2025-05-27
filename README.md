@@ -9,6 +9,7 @@ El control de movimiento es una disciplina esencial en ingeniería mecatrónica 
 foto
 
 ### 1.1.1 Tipos de tornillos
+
 * ACME (Rosca): Presentan una eficiencia mecánica del 35-85%, caracterizándose por su bajo costo pero mayor fricción en comparación con otros sistemas. Existen dos configuraciones geométricas principales para sus roscas: cuadrada y trapezoidal. La versión cuadrada, aunque más económica, presenta limitaciones estructurales significativas, particularmente en los flancos de la rosca, donde los picos agudos son susceptibles a fatiga y fractura por cargas cíclicas, lo que compromete su vida útil. En contraste, el diseño trapezoidal ofrece superior resistencia mecánica al distribuir las tensiones de forma más uniforme a lo largo del perfil de la rosca, minimizando la concentración de esfuerzos. Esta ventaja estructural aunque no reduce el riesgo de fallo a futuro, garantiza un movimiento más suave y estable de la bandeja o cama, especialmente en aplicaciones con altas cargas dinámicas o ciclos de trabajo continuos.
   
 * Tornillos de Esferas (Ball Screws): Eficiencias del 85-95% en tornillos de bolas (vs 35-85% en ACME), menor fricción gracias al contacto rodante, y backlash reducido que garantiza posicionamiento preciso. Es importante tener en cuenta que el backlash es un problema asociado a un fenómeno de torsión, durante el cual, por un instante, no se transmite la fuerza de manera efectiva debido a una discontinuidad o juego en la cadena cinemática.
@@ -16,9 +17,17 @@ foto
 foto
 
 ### 1.1.2 Relación de Transmisión 
-* Paso (Lead): Distancia lineal por revolución (
-* Cabeceo (Pitch): Revoluciones por metro lineal (
+* Paso (Lead): Distancia lineal por revolución, en otras palabras, es la relación de cuanto se mueve la capsula cuando el tornillo de una vuelta
+* Cabeceo (Pitch): Revoluciones por metro lineal, en otras palabras, es el número de revoluciones que debe tener el tornillo para que la capsula se desplace 1 metro.
 
+Para entender la relación entre el desplazamiento angular del tornillo y el desplazamiento lineal de la capsula (Carriage), se tienen las siguientes ecuaciones: 
+
+$$\Delta\theta= 2\pi(p)\Delta(x)$$
+
+1.1.3 Simulink Matlab Multibody
+
+imagen
+gif 
 
 ## 1.2 Sistema Piñón - Cremallera
 >🔑 ¿Qué es?: Mecanismo que convierte movimiento rotacional (piñón) en lineal (cremallera) mediante engrane directo. La cremallera casi siempre es metálica para soportar cargas pesadas y es por ello, que este tipo de transmisión es ideal para aplicaciones que requieren precisión y fuerza en ejes lineales.
