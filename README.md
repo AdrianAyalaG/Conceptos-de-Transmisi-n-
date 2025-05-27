@@ -24,6 +24,8 @@ Para entender la relación entre el desplazamiento angular del tornillo y el des
 
 $$\Delta\theta= 2\pi(p)\Delta(x)$$
 
+
+
 ### 2.1.3 Simulink Matlab Multibody
 
 imagen
@@ -37,6 +39,10 @@ foto
 ### 2.2.1 Relación de Transmisión 
 >🔑 ¿Qué es?: Define cómo la velocidad angular del piñón $$w_{pinion}$$ se traduce en velocidad lineal de la cremallera $$V_{rack}$$
 
+$$N = \frac{w_{motor}}{v_{rack}}$$ 
+
+Escrito de otra manera y solo si se están tratando velocidades en rad/segundos:
+
 $$N_{RP}= \frac{1}{r_{pinion}}$$
 
 $$V_{rack}= r_{pinion} * w_{pinion}$$
@@ -48,18 +54,21 @@ Donde $$r_{pinion}$$ será el radio del piñón.
 
 Cómo formula matemática sería: Inercia del Piñón + Inercia de la carga + Inercia del carro 
 
-$$J_{ref}= J_{pinion}+\frac{1}{\eta*N^{2}_{RP}}(\frac{W_{L}+W_{C}}{g})$$
+$$J_{ref} = J_{pinion}+\frac{1}{\eta N^{2}}(\frac{W_{L}+W_{C}}{g})$$
 
 * η: Eficiencia (típicamente 0.8 - 0.9 para buena eficiencia en el sistema; = 1 en ideal).
 * $$W_{C}$$ es el peso de la cremallera
+* La inercia del piñón $$J_{pinion}$$ se da en unidades de $$Kg*m^2$$
 
 ### 2.2.3 Torque reflejado
 >🔑 ¿Qué es?: Torque que el motor debe generar para superar todas las fuerzas externas que se oponen al movimiento del sistema.
 
 $$T_{load\to in}=\frac{F_{ext}}{\eta N_{RP}}$$
 
-Donde $$F_{ext}$$ es la suma de todas las fuerzas externas y $$N_{RP}$$ la relación de transmisión adimensional.Es fundamental identificar qué elementos deben reflejarse en una ecuación, y estos corresponden a lo que se encuentra al otro lado de la transformación de energía.
+* Donde $$F_{ext}$$ es la suma de todas las fuerzas externas y $$N_{RP}$$ la relación de transmisión adimensional. Es fundamental identificar qué elementos deben reflejarse en una ecuación de este porte, y estos corresponden a lo que se encuentra al otro lado de la transformación de energía.
 
+* Entre las observaciones más importantes de este sistema, cabe recalcar que a nivel estructural, requiere una correcta lubricación y mantenimiento para evitar desgaste prematuro por contacto constante, y una buena alineación para resistir adecuadamente las cargas radiales y axiales.
+  
 ## 2.3 Banda transoortadora 
 >🔑 ¿Qué es?: Sistema que transmite movimiento mediante poleas y una banda continua, usado en transporte de materiales, líneas de ensamblaje o producción, clasificación y distribucion de productos. 
 
@@ -72,6 +81,9 @@ $$r_{IP}$$ Es el radio de la polea de entrada, es decir, la que es motriz.
 ### 2.3.2 Inercia reflejada
 Considera inercias de poleas (2 poleas existentes en el sistema), de la banda, la carga y el carro.
 
+$$J_{ref} = \color{Red} 2J_{p}\color{Yellow} +\frac{1}{\eta N^{2}}(\frac{W_{L}+W_{C}+W_{Belt}}{g})$$
+
+* La inercia en las dos poleas se toman como si fueran valores iguales y este valor NO se refleja. La parte amarilla se refleja totalmente. 
 
 ### 2.3.3 Torque de carga 
 Se presenta igual que con el tornillo guia y el sistema piñón-cremallera 
