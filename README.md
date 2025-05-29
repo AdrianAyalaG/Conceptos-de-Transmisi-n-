@@ -6,15 +6,20 @@ El control de movimiento es una disciplina esencial en ingeniería mecatrónica 
 ## 2.1. Tornillo guía
   >🔑 ¿Qué es?: Mecanismo que convierte movimiento rotacional (motor) en lineal (carga). Usado en sistemas de posicionamiento de alta precisión (CNC, impresoras 3D).
 
-foto
+Al girar el tornillo, su rosca impulsa los dientes de la rueda dentada, provocando su rotación. A diferencia de los engranajes convencionales, en este sistema únicamente el tornillo puede mover la rueda, pero no viceversa. Esta característica lo convierte en una solución ideal para aplicaciones que requieren autobloqueo, es decir, que evitan el retroceso del movimiento de forma automática.
+
+gif
 
 ### 2.1.1 Tipos de tornillos
 
-* ACME (Rosca): Presentan una eficiencia mecánica del 35-85%, caracterizándose por su bajo costo pero mayor fricción en comparación con otros sistemas. Existen dos configuraciones geométricas principales para sus roscas: cuadrada y trapezoidal. La versión cuadrada, aunque más económica, presenta limitaciones estructurales significativas, particularmente en los flancos de la rosca, donde los picos agudos son susceptibles a fatiga y fractura por cargas cíclicas, lo que compromete su vida útil. En contraste, el diseño trapezoidal ofrece superior resistencia mecánica al distribuir las tensiones de forma más uniforme a lo largo del perfil de la rosca, minimizando la concentración de esfuerzos. Esta ventaja estructural aunque no reduce el riesgo de fallo a futuro, garantiza un movimiento más suave y estable de la bandeja o cama, especialmente en aplicaciones con altas cargas dinámicas o ciclos de trabajo continuos.
+* ACME (Rosca): Presentan una eficiencia mecánica del 35-85%, caracterizándose por su bajo costo pero mayor fricción en comparación con otros sistemas. Existen dos configuraciones geométricas principales para sus roscas: cuadrada y trapezoidal. La versión cuadrada, aunque más económica, presenta limitaciones estructurales significativas, particularmente en los flancos de la rosca, donde los picos agudos son susceptibles a fatiga y fractura por cargas cíclicas, lo que compromete su vida útil. En contraste, el diseño trapezoidal ofrece superior resistencia mecánica al distribuir las tensiones de forma más uniforme a lo largo del perfil de la rosca, minimizando la concentración de esfuerzos. Esta ventaja estructural aunque no reduce el riesgo de fallo a futuro, garantiza un movimiento más suave y estable de la bandeja o carro, especialmente en aplicaciones con altas cargas dinámicas o ciclos de trabajo continuos.
   
-* Tornillos de Esferas (Ball Screws): Eficiencias del 85-95% en tornillos de bolas (vs 35-85% en ACME), menor fricción gracias al contacto rodante, y backlash reducido que garantiza posicionamiento preciso. Es importante tener en cuenta que el backlash es un problema asociado a un fenómeno de torsión, durante el cual, por un instante, no se transmite la fuerza de manera efectiva debido a una discontinuidad o juego en la cadena cinemática.
+* Tornillos de Esferas (Ball Screws): Eficiencias del 85-95% en tornillos de bolas (vs 35-85% en ACME), menor fricción gracias al contacto rodante, y backlash reducido que garantiza posicionamiento preciso.
+* El backlash, también conocido como juego mecánico u holgura, es el pequeño espacio libre entre los dientes de dos elementos engranados, como un tornillo sin fin y una rueda dentada, o entre engranajes rectos. Este fenómeno se origina por tolerancias de fabricación, la necesidad de lubricación, el desgaste natural del sistema y el diseño intencionado para evitar bloqueos por expansión térmica o sobrecargas. Aunque es inevitable en cierto grado, el backlash puede afectar negativamente la precisión de sistemas de control, CNC, robótica o servoactuadores, provocando retardo en el movimiento cuando se invierte el sentido de giro (juego en reversa), así como ruidos y vibraciones si es excesivo. Además, está relacionado con un fenómeno de torsión en la cadena cinemática, en el que, momentáneamente, no se transmite fuerza de forma efectiva debido a la discontinuidad generada por esta holgura.
+  
 
-foto
+foto ball screws y rosca 
+foto backlash
 
 ### 2.1.2 Relación de Transmisión 
 * Paso (Lead): Distancia lineal por revolución, en otras palabras, es la relación de cuanto se mueve la capsula cuando el tornillo de una vuelta
@@ -24,12 +29,35 @@ Para entender la relación entre el desplazamiento angular del tornillo y el des
 
 $$\Delta\theta= 2\pi(p)\Delta(x)$$
 
+$$\frac{ \Delta^{\dot{}}\theta}{\Delta \dot{x}}= 2\pi p$$
+
+Donde: 
+
+$$\Delta^{\dot{}}\theta$$ Es la razón de cambio de $$\Theta$$ con respecto al tiempo y será la velocidad angular del motor en rad/s o RPM. Y $$\Delta \dot{x}$$ es la razón de cambio de $$x$$ con respecto al iempo y será la velocidad lineal de la carga en m/s.
+
+Entonces: 
+
+$$\frac{{\dot{\theta}}}{\dot{x}}= 2\pi p$$
+
+# 📚 Ejercicio 1
+Un tornillo sin fin tiene un paso (p) de 5 rev/m. Si el motor que lo impulsa gira a una velocidad angular de $$\dot{\theta}= 31.42 rad/s$$. ¿Cuál es la velocidad lineal de desplazamiento de la tuerca acoplada al tornillo?
+
+Solución: 
+
+$$\frac{{\dot{\theta}}}{\dot{x}}= 2\pi p \to \dot{x}= \frac{\dot{\theta}}{2\pi p}$$
+
+$$\dot{x}=\frac{31.42}{2\pi (5)}= 1.00 m/s$$
+
+La velocidad lineal de desplazamiento de la tuerca acoplada al tornillo será de 1 m/s. 
+
+------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- °
+
+
 
 
 ### 2.1.3 Simulink Matlab Multibody
 
-imagen
-gif 
+imagen 
 
 ## 2.2 Sistema Piñón - Cremallera
 >🔑 ¿Qué es?: Mecanismo que convierte movimiento rotacional (piñón) en lineal (cremallera) mediante engrane directo. La cremallera casi siempre es metálica para soportar cargas pesadas y es por ello, que este tipo de transmisión es ideal para aplicaciones que requieren precisión y fuerza en ejes lineales.
