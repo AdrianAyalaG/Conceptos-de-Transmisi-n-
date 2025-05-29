@@ -113,18 +113,35 @@ $$F_{ext}=F_{p}+(W_{L}+W_{C})(sin\beta +\mu cos⁡\beta )$$ (15)
 
 El torque requerido para mover una carga, denotado como $$T_{load in}$$ puede determinarse a partir del trabajo realizado por una fuerza externa. En términos lineales, el trabajo se define como $$Work=F_{ext}* \Delta x$$ donde se encuentra la fuerza aplicada y el desplazamiento lineal Al pasar a un análisis rotacional, el trabajo se expresa como $$$$Work=T_{load in}* \Delta \theta$$ siendo $$\theta$$ el valor de la velocidad angular. Dado un sistema basado en tornillo, existe una relación entre el desplazamiento lineal y angular: $$\Delta x = \Delta \theta * \frac{2\pi }{p}$$  donde p es el paso del tornillo en revoluciones por metro. A partir de esta relación, se obtiene la expresión del torque reflejado hacia el actuador como: 
 
-$$T_{load in}= \frac{F_{ext}}{\eta (N_{s})}$$
+$$T_{load in}= \frac{F_{ext}}{\eta (N_{s})}$$ (16)
 
 donde $$\eta$$ representa la eficiencia del sistema (típicamente entre 0.7 y 0.9) y $$N_{s}= \frac{2\pi }{p}$$ es la relación de transmisión del sistema tornillo-tuerca. Esta ecuación permite calcular el torque necesario considerando las pérdidas por fricción y la geometría del mecanismo.
 
+ 💡Ejemplo 1
+Una carga de 50 Kg debe ser posicionado usando un tornillo esferado de acero con 0,14 Kg/cm³ de densidad, 0,182 cm de diámetro, 36 cm de longitud, 0,75 cm/rev de paso y 90% de eficiencia. El carro pesa 0,23 Kg. Calcule la inercia reflejada por la transmisión hacia su eje de entrada.
 
+* El valor mostrado de 386 $$in/s^{2}$$ equivale a 9.804 $$m/s^{2}$$
+* Para el valor de $$N_{s}$$ se usa la ecuación  $$N_{s}= \frac{2\pi }{p}$$
+
+   $$N_{s}= \frac{2\pi }{0.75} = 8.38$$
+
+* $$J_{screw} = ?$$
   
+$$J_{screw}= \frac{\pi L p D^{4}}{32}$$
+
+$$J_{screw}= \frac{\pi (0.36)(140000) (0.00182)^{4}}{32}=5.42x10^-8 Kg m^{2}$$
   
+* $$\eta = 0.9 o 90%$$
+* $$W_{L} = 50kg$$
+* $$W_{C}= 0.23kg$$
+
+Inercia reflejada: 
+
+$$J_{ref}= 5.42x10^-8 + \frac{1}{0.9*(8.38)^{2}}(\frac{50+0.23}{9.804})= ​0.081 Kgm^{2}$$
 
 ### 2.1.3 Simulink Matlab Multibody
 
-Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se utiliza un modelo de un tornillo de paso 2mm y 4 hilos. Se añade los parámetros de Lead Screw Joint 
-
+Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se utiliza un modelo de un tornillo de paso 2mm y 4 hilos. Se añade los parámetros de Lead Screw Joint y una plancha para que se vea el movimiento lineal que realiza mientras el tornillo rota. 
 
 imagen 
 
@@ -136,13 +153,13 @@ foto
 ### 2.2.1 Relación de Transmisión 
 >🔑 ¿Qué es?: Define cómo la velocidad angular del piñón $$w_{pinion}$$ se traduce en velocidad lineal de la cremallera $$V_{rack}$$
 
-$$N = \frac{w_{motor}}{v_{rack}}$$ 
+$$N = \frac{w_{motor}}{v_{rack}}$$ (17)
 
 Escrito de otra manera y solo si se están tratando velocidades en rad/segundos:
 
-$$N_{RP}= \frac{1}{r_{pinion}}$$
+$$N_{RP}= \frac{1}{r_{pinion}}$$ (18)
 
-$$V_{rack}= r_{pinion} * w_{pinion}$$
+$$V_{rack}= r_{pinion} * w_{pinion}$$  (19) 
 
 Donde $$r_{pinion}$$ será el radio del piñón. 
 
@@ -151,7 +168,7 @@ Donde $$r_{pinion}$$ será el radio del piñón.
 
 Cómo formula matemática sería: Inercia del Piñón + Inercia de la carga + Inercia del carro 
 
-$$J_{ref} = J_{pinion}+\frac{1}{\eta N^{2}}(\frac{W_{L}+W_{C}}{g})$$
+$$J_{ref} = J_{pinion}+\frac{1}{\eta N^{2}}(\frac{W_{L}+W_{C}}{g})$$ (20)
 
 * η: Eficiencia (típicamente 0.8 - 0.9 para buena eficiencia en el sistema; = 1 en ideal).
 * $$W_{C}$$ es el peso de la cremallera
@@ -160,7 +177,7 @@ $$J_{ref} = J_{pinion}+\frac{1}{\eta N^{2}}(\frac{W_{L}+W_{C}}{g})$$
 ### 2.2.3 Torque reflejado
 >🔑 ¿Qué es?: Torque que el motor debe generar para superar todas las fuerzas externas que se oponen al movimiento del sistema.
 
-$$T_{load\to in}=\frac{F_{ext}}{\eta N_{RP}}$$
+$$T_{load\to in}=\frac{F_{ext}}{\eta N_{RP}}$$  (21)
 
 * Donde $$F_{ext}$$ es la suma de todas las fuerzas externas y $$N_{RP}$$ la relación de transmisión adimensional. Es fundamental identificar qué elementos deben reflejarse en una ecuación de este porte, y estos corresponden a lo que se encuentra al otro lado de la transformación de energía.
 
@@ -171,24 +188,39 @@ $$T_{load\to in}=\frac{F_{ext}}{\eta N_{RP}}$$
 
 ### 2.3.1 Relación de transmisión (Poleas iguales) 
 
-$$N_{BD}= \frac{1}{R_{IP}}; V_{belt}= r_{IP}* w_{IP}$$
+$$N_{BD}= \frac{1}{R_{IP}}; V_{belt}= r_{IP}* w_{IP}$$ (22)
 
 $$r_{IP}$$ Es el radio de la polea de entrada, es decir, la que es motriz. 
 
 ### 2.3.2 Inercia reflejada
 Considera inercias de poleas (2 poleas existentes en el sistema), de la banda, la carga y el carro.
 
-$$J_{ref} = \color{Red} 2J_{p}\color{Yellow} +\frac{1}{\eta N^{2}}(\frac{W_{L}+W_{C}+W_{Belt}}{g})$$
+$$J_{ref} = \color{Red} 2J_{p}\color{Yellow} +\frac{1}{\eta N^{2}}(\frac{W_{L}+W_{C}+W_{Belt}}{g})$$ (23)
 
 * La inercia en las dos poleas se toman como si fueran valores iguales y este valor NO se refleja. La parte amarilla se refleja totalmente. 
 
 ### 2.3.3 Torque de carga 
 Se presenta igual que con el tornillo guia y el sistema piñón-cremallera 
 
-$$T_{load\to in}=\frac{F_{ext}}{\eta N_{BD}}$$
+$$T_{load\to in}=\frac{F_{ext}}{\eta N_{BD}}$$ (24)
 
 * La fuerza externa total es igual a la que se emplea en el tornillo guia y el piñón -cremallera.
 
+### 2.3.4 Sistema con 3 poleas (Más complejo) 
+
+Cuando se añade una tercera polea (como en un sistema con poleas de tensión), se incrementa la cantidad de elementos rotacionales que aportan inercia reflejada al motor. El modelo se vuelve más complejo y se requiere evaluar todas las inercia rotacionales reflejadas:
+
+$$J_{ref} =J_{DR} +J_{load-in}+J_{belt-in}+J_{ID-in} +J_{BR-in}$$   (25)
+
+* $$J_{DR}$$ es la inercia del tambor conductor.
+* $$J_{ID-in}$$ Inercia de polea intermedia.
+* $$J_{BR-in}$$ Inercia reflejada de la polea de retorno.
+* La inercia de la banda considera su masa distribuida.
+* La inercia de la carga reflejada es igual que en un sistema de dos poleas.
+
+### 2.3.5 Diferencias de sistemas 
+
+En un sistema de banda transportadora con dos poleas, la complejidad mecánica es relativamente baja, lo que permite aplicar directamente la ecuación del torque requerido al motor considerando únicamente el peso de la carga, la banda, el ángulo de inclinación y la fricción. En este caso, solo intervienen el tambor motriz y la carga, por lo que la inercia total reflejada es menor. Por el contrario, en un sistema con tres poleas —donde se incluyen una polea intermedia (idler) y una polea de retorno— la complejidad del sistema aumenta significativamente. Esto se traduce en un modelo más detallado que requiere considerar múltiples inercias reflejadas, incluyendo la de la banda y cada polea adicional. Como resultado, la inercia total reflejada al motor es mayor, y se debe tener en cuenta la eficiencia del sistema y las relaciones de transmisión de cada componente para obtener un cálculo preciso del torque requerido.
 
 # 3. Conclusiones 
 La transmisión en un tornillo sin fin, determinada por el número de hilos del tornillo y los dientes de la rueda, permite alcanzar grandes reducciones en un solo paso, siendo especialmente adecuada para sistemas de alta carga y baja velocidad; sin embargo, cuando se requiere transformar el movimiento rotacional en lineal con mayor precisión y eficiencia, mecanismos como el husillo de bolas ofrecen ventajas notables, ya que, a diferencia de la rosca directa, reducen la fricción mediante la recirculación de bolas, lo que mejora significativamente la vida útil, la precisión y la eficiencia, aunque a costa de una mayor complejidad y precio. Por otro lado, el sistema piñón-cremallera también convierte el movimiento rotativo en lineal, pero a través de una relación directa entre la velocidad angular del piñón y la velocidad lineal de la cremallera, lo cual lo hace más adecuado para trayectorias largas y repetitivas, a diferencia del tornillo, que se emplea comúnmente en recorridos más cortos y con mayor necesidad de precisión. En cuanto a los parámetros del tornillo, el paso y el cabeceo son esenciales para entender el desplazamiento por vuelta, ya que su relación inversa permite obtener movimientos lineales más o menos rápidos según se requiera, lo cual tiene implicaciones directas en la inercia reflejada al motor: un mayor paso reduce dicha inercia, mejorando la respuesta dinámica del sistema, aunque puede comprometer la precisión en aplicaciones de control fino. Esta inercia reflejada es un concepto clave en el modelado de sistemas mecatrónicos, ya que permite representar todos los elementos en un único dominio, rotacional o lineal, lo cual simplifica el análisis y el diseño de controladores. Finalmente, en mecanismos como bandas transportadoras con múltiples rodillos, aunque la velocidad lineal de la banda permanece constante, las velocidades angulares de los rodillos varían según sus radios, lo que, al igual que en los demás sistemas mencionados, exige una cuidadosa sincronización para garantizar un funcionamiento armónico y eficiente.
