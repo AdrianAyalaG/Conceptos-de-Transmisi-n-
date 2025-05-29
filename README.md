@@ -111,7 +111,7 @@ Si $$\beta = 0$$ es horizontal
 
 $$F_{ext}=F_{p}+(W_{L}+W_{C})(sin\beta +\mu cos⁡\beta )$$ (15)
 
-El torque requerido para mover una carga, denotado como $$T_{load in}$$ puede determinarse a partir del trabajo realizado por una fuerza externa. En términos lineales, el trabajo se define como $$Work=F_{ext}* \Delta x$$ donde se encuentra la fuerza aplicada y el desplazamiento lineal Al pasar a un análisis rotacional, el trabajo se expresa como $$$$Work=T_{load in}* \Delta \theta$$ siendo $$\theta$$ el valor de la velocidad angular. Dado un sistema basado en tornillo, existe una relación entre el desplazamiento lineal y angular: $$\Delta x = \Delta \theta * \frac{2\pi }{p}$$  donde p es el paso del tornillo en revoluciones por metro. A partir de esta relación, se obtiene la expresión del torque reflejado hacia el actuador como: 
+El torque requerido para mover una carga, denotado como $$T_{load in}$$ puede determinarse a partir del trabajo realizado por una fuerza externa. En términos lineales, el trabajo se define como $$Work=F_{ext}* \Delta x$$ donde se encuentra la fuerza aplicada y el desplazamiento lineal Al pasar a un análisis rotacional, el trabajo se expresa como $$Work=T_{load in}* \Delta \theta$$ siendo $$\theta$$ el valor de la velocidad angular. Dado un sistema basado en tornillo, existe una relación entre el desplazamiento lineal y angular: $$\Delta x = \Delta \theta * \frac{2\pi }{p}$$  donde p es el paso del tornillo en revoluciones por metro. A partir de esta relación, se obtiene la expresión del torque reflejado hacia el actuador como: 
 
 $$T_{load in}= \frac{F_{ext}}{\eta (N_{s})}$$ (16)
 
