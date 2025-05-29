@@ -27,17 +27,17 @@ foto backlash
 
 Para entender la relación entre el desplazamiento angular del tornillo y el desplazamiento lineal de la capsula (Carriage), se tienen las siguientes ecuaciones: 
 
-$$\Delta\theta= 2\pi(p)\Delta(x)$$
+$$\Delta\theta= 2\pi(p)\Delta(x)$$  (1)
 
-$$\frac{ \Delta^{\dot{}}\theta}{\Delta \dot{x}}= 2\pi p$$
+$$\frac{ \Delta^{\dot{}}\theta}{\Delta \dot{x}}= 2\pi p$$ (2)
 
 Donde: 
 
 $$\Delta^{\dot{}}\theta$$ Es la razón de cambio de $$\Theta$$ con respecto al tiempo y será la velocidad angular del motor en rad/s o RPM. Y $$\Delta \dot{x}$$ es la razón de cambio de $$x$$ con respecto al iempo y será la velocidad lineal de la carga en m/s.
 
-Entonces: 
+Entonces la relación de transmisión resulta siendo: 
 
-$$\frac{{\dot{\theta}}}{\dot{x}}= 2\pi p$$
+$$\frac{{\dot{\theta}}}{\dot{x}}= 2\pi p$$ (3)
 
 # 📚 Ejercicio 1
 Un tornillo sin fin tiene un paso (p) de 5 rev/m. Si el motor que lo impulsa gira a una velocidad angular de $$\dot{\theta}= 31.42 rad/s$$. ¿Cuál es la velocidad lineal de desplazamiento de la tuerca acoplada al tornillo?
@@ -50,12 +50,55 @@ $$\dot{x}=\frac{31.42}{2\pi (5)}= 1.00 m/s$$
 
 La velocidad lineal de desplazamiento de la tuerca acoplada al tornillo será de 1 m/s. 
 
-------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- °
+------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° 
+
+Ahora bien, al tener en cuenta que la carga se desplazará linealmente siempre, la energía cinética sobre ella será: 
+
+$$KE = \frac{1}{2}m(\dot{x})^{2}$$ (4) 
+
+A raiz de la relación de transmisión Ecuación (3) se reemplazan los valores:
+
+$$KE = \frac{1}{2}m\frac{1}{(2\pi p)^{2}}(\dot{\theta })^{2}$$  (5) 
+
+ Ahora, la inercia reflejada en el sistema será:
+
+$$J_{ref}= \frac{m}{(2\pi p)^{2}}$$ (6)
+
+O equivalente si $$N_{s}= 2\pi p$$ : 
+
+$$J_{ref}= \frac{m}{(N_{s})^{2}}$$ (7)
+
+Los componentes clave del sistema incluyen las masas involucradas y la inercia total reflejada. La carga (Load) y el carro (Carriage) tienen pesos $$W_{L}$$ y $$W_{C}$$ respectivamente, expresados en newtons [N]. La masa total equivalente del sistema se calcula como $$m = \frac{W_{L}+W_{C}}{g}$$ donde $$g= 9.81 m/s^{2}$$ es la aceleración debida a la gravedad. Por otro lado, la inercia total reflejada del sistema, denotada como $$J_{total}$$ está compuesta por tres contribuciones principales: la inercia del tornillo, la inercia reflejada de la carga, y la inercia reflejada del carro. Estos parámetros son fundamentales para el diseño y análisis dinámico de sistemas de movimiento lineal accionados por tornillo.
+
+$${total}= J_{tornillo}+J_{reflejada de la carga}+J_{Carro}$$ (8)
+
+* La inercia del tornillo dependerá de la geometría y el material del tornillo. Sin embargo, las otras inercias si se pueden conocer facilmente con las siguientes formulas matemáticas:
+
+Inercia de la carga reflejada:
+
+$$\frac{1}{\eta (N_{s})^{2}}(\frac{W_{L}}{g})$$ (9)
+
+Inercia del carro reflejada: 
+
+$$\frac{1}{\eta (N_{s})^{2}}(\frac{W_{C}}{g})$$ (10)
+
+Formula completa: 
+
+$$J_{Tornillo}+\frac{1}{\eta (N_{s})^{2}}(\frac{W_{L}+W_{C}}{g})$$ (11) 
+
+
+
+
+
+* Nota importante: En sistemas de alta precisión, es importante considerar también la inercia del acoplamiento entre el motor y el tornillo, ya que esta puede influir en el rendimiento dinámico. La inercia reflejada representa el efecto de la masa de la carga trasladado al eje del motor, como si ambos estuvieran directamente conectados. Este concepto es fundamental porque permite modelar todo el sistema en términos rotacionales, lo que facilita tanto el análisis dinámico como el diseño de sistemas de control. Además, el uso de tornillos con un mayor paso reduce la inercia reflejada, lo que resulta en una respuesta más ágil y eficiente del sistema.
 
 
 
 
 ### 2.1.3 Simulink Matlab Multibody
+
+Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se utiliza un modelo de un tornillo de paso 2mm y 4 hilos. Se añade los parámetros de Lead Screw Joint 
+
 
 imagen 
 
