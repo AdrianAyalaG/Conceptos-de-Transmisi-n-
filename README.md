@@ -51,6 +51,7 @@ $$\dot{x}=\frac{31.42}{2\pi (5)}= 1.00 m/s$$
 La velocidad lineal de desplazamiento de la tuerca acoplada al tornillo será de 1 m/s. 
 
 ------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° 
+### 2.1.3 Inercia Reflejada 
 
 Ahora bien, al tener en cuenta que la carga se desplazará linealmente siempre, la energía cinética sobre ella será: 
 
@@ -67,6 +68,8 @@ $$J_{ref}= \frac{m}{(2\pi p)^{2}}$$ (6)
 O equivalente si $$N_{s}= 2\pi p$$ : 
 
 $$J_{ref}= \frac{m}{(N_{s})^{2}}$$ (7)
+
+### 2.1.4 Inercia reflejada total 
 
 Los componentes clave del sistema incluyen las masas involucradas y la inercia total reflejada. La carga (Load) y el carro (Carriage) tienen pesos $$W_{L}$$ y $$W_{C}$$ respectivamente, expresados en newtons [N]. La masa total equivalente del sistema se calcula como $$m = \frac{W_{L}+W_{C}}{g}$$ donde $$g= 9.81 m/s^{2}$$ es la aceleración debida a la gravedad. Por otro lado, la inercia total reflejada del sistema, denotada como $$J_{total}$$ está compuesta por tres contribuciones principales: la inercia del tornillo, la inercia reflejada de la carga, y la inercia reflejada del carro. Estos parámetros son fundamentales para el diseño y análisis dinámico de sistemas de movimiento lineal accionados por tornillo.
 
@@ -86,14 +89,37 @@ Formula completa:
 
 $$J_{Tornillo}+\frac{1}{\eta (N_{s})^{2}}(\frac{W_{L}+W_{C}}{g})$$ (11) 
 
-
-
-
-
 * Nota importante: En sistemas de alta precisión, es importante considerar también la inercia del acoplamiento entre el motor y el tornillo, ya que esta puede influir en el rendimiento dinámico. La inercia reflejada representa el efecto de la masa de la carga trasladado al eje del motor, como si ambos estuvieran directamente conectados. Este concepto es fundamental porque permite modelar todo el sistema en términos rotacionales, lo que facilita tanto el análisis dinámico como el diseño de sistemas de control. Además, el uso de tornillos con un mayor paso reduce la inercia reflejada, lo que resulta en una respuesta más ágil y eficiente del sistema.
 
+### 2.1.4 Análisis Torque de carga
+
+Las fuerzas externas que actuan sobre el sistema se componen de la fuerza de fricción $$F_{f}$$, la fuerza gravitacional $$F_{g}$$, y una fuerza externa adicional que puede ser el empuje u ptra fuerza predominante $$F_{p}$$
+
+$$F_{ext}=F_{f}+F_{g}+F_{p}$$ (12)
+
+* La fuerza de fricción es :
+  
+  $$F_{f}= \mu (W_{L}+W_{C})cos\beta$$ (13)
+
+* La fuerza gravitacional es:
+
+ $$F_{g}= (W_{L}+W_{C})sin\beta$$ (14)
+
+Si $$\beta = 0$$ es horizontal 
+
+* Formula completa de fuerzas externas:
+
+$$F_{ext}=F_{p}+(W_{L}+W_{C})(sin\beta +\mu cos⁡\beta )$$ (15)
+
+El torque requerido para mover una carga, denotado como $$T_{load in}$$ puede determinarse a partir del trabajo realizado por una fuerza externa. En términos lineales, el trabajo se define como $$Work=F_{ext}* \Delta x$$ donde se encuentra la fuerza aplicada y el desplazamiento lineal Al pasar a un análisis rotacional, el trabajo se expresa como $$$$Work=T_{load in}* \Delta \theta$$ siendo $$\theta$$ el valor de la velocidad angular. Dado un sistema basado en tornillo, existe una relación entre el desplazamiento lineal y angular: $$\Delta x = \Delta \theta * \frac{2\pi }{p}$$  donde p es el paso del tornillo en revoluciones por metro. A partir de esta relación, se obtiene la expresión del torque reflejado hacia el actuador como: 
+
+$$T_{load in}= \frac{F_{ext}}{\eta (N_{s})}$$
+
+donde $$\eta$$ representa la eficiencia del sistema (típicamente entre 0.7 y 0.9) y $$N_{s}= \frac{2\pi }{p}$$ es la relación de transmisión del sistema tornillo-tuerca. Esta ecuación permite calcular el torque necesario considerando las pérdidas por fricción y la geometría del mecanismo.
 
 
+  
+  
 
 ### 2.1.3 Simulink Matlab Multibody
 
