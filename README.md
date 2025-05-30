@@ -157,13 +157,11 @@ Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se 
 
 ![Figura 8](P1.jpeg)
 
-Figura 4. 
-
-
+Figura 4. Simulink del tornillo guia
 
 ![Figura 9](P2.jpeg)
 
-Figura 5. 
+Figura 5. Tornillo guia funcional.
 
 
 ## 2.2 Sistema Piñón - Cremallera
