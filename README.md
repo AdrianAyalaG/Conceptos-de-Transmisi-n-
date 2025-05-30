@@ -155,10 +155,15 @@ $$J_{ref}= 5.42x10^-8 + \frac{1}{0.9*(8.38)^{2}}(\frac{50+0.23}{9.804})= ​0.08
 
 Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se utiliza un modelo de un tornillo de paso 2mm y 4 hilos. Se añade los parámetros de Lead Screw Joint y una plancha para que se vea el movimiento lineal que realiza mientras el tornillo rota. 
 
-![Figura 8](C5.jpeg)
+![Figura 8](P1.jpeg)
 
 Figura 4. 
 
+
+
+![Figura 9](P2.jpeg)
+
+Figura 5. 
 
 
 ## 2.2 Sistema Piñón - Cremallera
@@ -166,7 +171,7 @@ Figura 4.
 
 ![Figura 5](C4.png)
 
-Figura 5. Piñón-cremallera. 
+Figura 6. Piñón-cremallera. 
 
 ### 2.2.1 Relación de Transmisión 
 >🔑 ¿Qué es?: Define cómo la velocidad angular del piñón $$w_{pinion}$$ se traduce en velocidad lineal de la cremallera $$V_{rack}$$
@@ -226,7 +231,7 @@ $$T_{load\to in}=\frac{183.928}{(0.85)(60)}= 3.606 N * m$$
 
 ![Figura 6](C5.png)
 
-Figura 6. Banda transportadora de poleas iguales.
+Figura 7. Banda transportadora de poleas iguales.
 
 $$N_{BD}= \frac{1}{R_{IP}}; V_{belt}= r_{IP}* w_{IP}$$ (22)
 
@@ -260,7 +265,7 @@ $$F_{ext}= 8.34(0.98)(10)= 81.732 N$$
 
 ![Figura 7](C7.png)
 
-Figura 7. Banda transportadora con 3 poleas. 
+Figura 8. Banda transportadora con 3 poleas. 
 
 Cuando se añade una tercera polea (como en un sistema con poleas de tensión), se incrementa la cantidad de elementos rotacionales que aportan inercia reflejada al motor. El modelo se vuelve más complejo y se requiere evaluar todas las inercia rotacionales reflejadas:
 
@@ -271,8 +276,6 @@ $$J_{ref} =J_{DR} +J_{load-in}+J_{belt-in}+J_{ID-in} +J_{BR-in}$$   (25)
 * $$J_{BR-in}$$ Inercia reflejada de la polea de retorno.
 * La inercia de la banda considera su masa distribuida.
 * La inercia de la carga reflejada es igual que en un sistema de dos poleas.
-
-  foto
 
 ### 2.3.5 Diferencias de sistemas 
 
