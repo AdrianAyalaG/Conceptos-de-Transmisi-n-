@@ -18,7 +18,7 @@ Figura 1. Tornillo guia con acople.
 
 ![Figura 2](C6.png)
 
-Figura 2.
+Figura 2. Rosca cuadrada y trapezoidal.
   
 * Tornillos de Esferas (Ball Screws): Eficiencias del 85-95% en tornillos de bolas (vs 35-85% en ACME), menor fricción gracias al contacto rodante, y backlash reducido que garantiza posicionamiento preciso.
   
@@ -224,6 +224,10 @@ $$T_{load\to in}=\frac{183.928}{(0.85)(60)}= 3.606 N * m$$
 
 ### 2.3.1 Relación de transmisión (Poleas iguales) 
 
+![Figura 6](C5.png)
+
+Figura 6. Banda transportadora de poleas iguales.
+
 $$N_{BD}= \frac{1}{R_{IP}}; V_{belt}= r_{IP}* w_{IP}$$ (22)
 
 $$r_{IP}$$ Es el radio de la polea de entrada, es decir, la que es motriz. 
@@ -254,6 +258,10 @@ $$F_{ext}= 8.34(0.98)(10)= 81.732 N$$
 
 ### 2.3.4 Sistema con 3 poleas (Más complejo) 
 
+![Figura 7](C7.png)
+
+Figura 7. Banda transportadora con 3 poleas. 
+
 Cuando se añade una tercera polea (como en un sistema con poleas de tensión), se incrementa la cantidad de elementos rotacionales que aportan inercia reflejada al motor. El modelo se vuelve más complejo y se requiere evaluar todas las inercia rotacionales reflejadas:
 
 $$J_{ref} =J_{DR} +J_{load-in}+J_{belt-in}+J_{ID-in} +J_{BR-in}$$   (25)
@@ -268,7 +276,7 @@ $$J_{ref} =J_{DR} +J_{load-in}+J_{belt-in}+J_{ID-in} +J_{BR-in}$$   (25)
 
 ### 2.3.5 Diferencias de sistemas 
 
-En un sistema de banda transportadora con dos poleas, la complejidad mecánica es relativamente baja, lo que permite aplicar directamente la ecuación del torque requerido al motor considerando únicamente el peso de la carga, la banda, el ángulo de inclinación y la fricción. En este caso, solo intervienen el tambor motriz y la carga, por lo que la inercia total reflejada es menor. Por el contrario, en un sistema con tres poleas —donde se incluyen una polea intermedia (idler) y una polea de retorno— la complejidad del sistema aumenta significativamente. Esto se traduce en un modelo más detallado que requiere considerar múltiples inercias reflejadas, incluyendo la de la banda y cada polea adicional. Como resultado, la inercia total reflejada al motor es mayor, y se debe tener en cuenta la eficiencia del sistema y las relaciones de transmisión de cada componente para obtener un cálculo preciso del torque requerido.
+En un sistema de banda transportadora con dos poleas, la complejidad mecánica es relativamente baja, lo que permite aplicar directamente la ecuación del torque requerido al motor considerando únicamente el peso de la carga, la banda, el ángulo de inclinación y la fricción. En este caso, solo intervienen el tambor motriz y la carga, por lo que la inercia total reflejada es menor. Por el contrario, en un sistema con tres poleas donde se incluyen una polea intermedia y una polea de retorno; La complejidad del sistema aumenta significativamente. Esto se traduce en un modelo más detallado que requiere considerar múltiples inercias reflejadas, incluyendo la de la banda y cada polea adicional. Como resultado, la inercia total reflejada al motor es mayor, y se debe tener en cuenta la eficiencia del sistema y las relaciones de transmisión de cada componente para obtener un cálculo preciso del torque requerido.
 
 # 3. Conclusiones 
 La transmisión en un tornillo sin fin, determinada por el número de hilos del tornillo y los dientes de la rueda, permite alcanzar grandes reducciones en un solo paso, siendo especialmente adecuada para sistemas de alta carga y baja velocidad; sin embargo, cuando se requiere transformar el movimiento rotacional en lineal con mayor precisión y eficiencia, mecanismos como el husillo de bolas ofrecen ventajas notables, ya que, a diferencia de la rosca directa, reducen la fricción mediante la recirculación de bolas, lo que mejora significativamente la vida útil, la precisión y la eficiencia, aunque a costa de una mayor complejidad y precio. Por otro lado, el sistema piñón-cremallera también convierte el movimiento rotativo en lineal, pero a través de una relación directa entre la velocidad angular del piñón y la velocidad lineal de la cremallera, lo cual lo hace más adecuado para trayectorias largas y repetitivas, a diferencia del tornillo, que se emplea comúnmente en recorridos más cortos y con mayor necesidad de precisión. En cuanto a los parámetros del tornillo, el paso y el cabeceo son esenciales para entender el desplazamiento por vuelta, ya que su relación inversa permite obtener movimientos lineales más o menos rápidos según se requiera, lo cual tiene implicaciones directas en la inercia reflejada al motor: un mayor paso reduce dicha inercia, mejorando la respuesta dinámica del sistema, aunque puede comprometer la precisión en aplicaciones de control fino. Esta inercia reflejada es un concepto clave en el modelado de sistemas mecatrónicos, ya que permite representar todos los elementos en un único dominio, rotacional o lineal, lo cual simplifica el análisis y el diseño de controladores. Finalmente, en mecanismos como bandas transportadoras con múltiples rodillos, aunque la velocidad lineal de la banda permanece constante, las velocidades angulares de los rodillos varían según sus radios, lo que, al igual que en los demás sistemas mencionados, exige una cuidadosa sincronización para garantizar un funcionamiento armónico y eficiente.
