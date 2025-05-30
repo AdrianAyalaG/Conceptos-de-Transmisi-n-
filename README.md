@@ -118,6 +118,7 @@ $$T_{load in}= \frac{F_{ext}}{\eta (N_{s})}$$ (16)
 donde $$\eta$$ representa la eficiencia del sistema (típicamente entre 0.7 y 0.9) y $$N_{s}= \frac{2\pi }{p}$$ es la relación de transmisión del sistema tornillo-tuerca. Esta ecuación permite calcular el torque necesario considerando las pérdidas por fricción y la geometría del mecanismo.
 
  💡Ejemplo 1
+ 
 Una carga de 50 Kg debe ser posicionado usando un tornillo esferado de acero con 0,14 Kg/cm³ de densidad, 0,182 cm de diámetro, 36 cm de longitud, 0,75 cm/rev de paso y 90% de eficiencia. El carro pesa 0,23 Kg. Calcule la inercia reflejada por la transmisión hacia su eje de entrada.
 
 * El valor mostrado de 386 $$in/s^{2}$$ equivale a 9.804 $$m/s^{2}$$
@@ -131,7 +132,7 @@ $$J_{screw}= \frac{\pi L p D^{4}}{32}$$
 
 $$J_{screw}= \frac{\pi (0.36)(140000) (0.00182)^{4}}{32}=5.42x10^-8 Kg m^{2}$$
   
-* $$\eta = 0.9 o 90%$$
+* $$\eta = 0.9$$
 * $$W_{L} = 50kg$$
 * $$W_{C}= 0.23kg$$
 
@@ -182,6 +183,24 @@ $$T_{load\to in}=\frac{F_{ext}}{\eta N_{RP}}$$  (21)
 * Donde $$F_{ext}$$ es la suma de todas las fuerzas externas y $$N_{RP}$$ la relación de transmisión adimensional. Es fundamental identificar qué elementos deben reflejarse en una ecuación de este porte, y estos corresponden a lo que se encuentra al otro lado de la transformación de energía.
 
 * Entre las observaciones más importantes de este sistema, cabe recalcar que a nivel estructural, requiere una correcta lubricación y mantenimiento para evitar desgaste prematuro por contacto constante, y una buena alineación para resistir adecuadamente las cargas radiales y axiales.
+
+#  📚 Ejercicio 2
+
+DATOS: 
+$$W_{L} = 300 N = W_{C}$$
+$$\mu = 0.2$$
+$$\beta = 45°$$
+$$\eta = 0.85$$
+$$N_{RP}=60$$ 
+$$F_{g}= 120.89$$ N
+
+$$F_{f}= 0.2 * 600 *cos(45°)= 63.038 N$$
+$$f_{ext}= 63.038+120.89= 183.928 N$$
+
+Teniendo en cuenta la ecuación (21) :
+
+$$T_{load\to in}=\frac{183.928}{(0.85)(60}= 3.606 N * m$$
+
   
 ## 2.3 Banda transportadora 
 >🔑 ¿Qué es?: Sistema que transmite movimiento mediante poleas y una banda continua, usado en transporte de materiales, líneas de ensamblaje o producción, clasificación y distribucion de productos. 
