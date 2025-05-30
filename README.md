@@ -93,7 +93,7 @@ $$J_{Tornillo}+\frac{1}{\eta (N_{s})^{2}}(\frac{W_{L}+W_{C}}{g})$$ (11)
 
 ### 2.1.4 Análisis Torque de carga
 
-Las fuerzas externas que actuan sobre el sistema se componen de la fuerza de fricción $$F_{f}$$, la fuerza gravitacional $$F_{g}$$, y una fuerza externa adicional que puede ser el empuje u ptra fuerza predominante $$F_{p}$$
+Las fuerzas externas que actuan sobre el sistema se componen de la fuerza de fricción $$F_{f}$$, la fuerza gravitacional $$F_{g}$$, y una fuerza externa adicional que puede ser el empuje u otra fuerza predominante $$F_{p}$$
 
 $$F_{ext}=F_{f}+F_{g}+F_{p}$$ (12)
 
@@ -201,7 +201,7 @@ Teniendo en cuenta la ecuación (21) :
 
 $$T_{load\to in}=\frac{183.928}{(0.85)(60)}= 3.606 N * m$$
 
-  
+------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° 
 ## 2.3 Banda transportadora 
 >🔑 ¿Qué es?: Sistema que transmite movimiento mediante poleas y una banda continua, usado en transporte de materiales, líneas de ensamblaje o producción, clasificación y distribucion de productos. 
 
@@ -233,6 +233,8 @@ Solución:
 
 $$F_{ext}= 8.34(0.98)(10)= 81.732 N$$
 
+------------------------------- ° ------------------------------- ° ------------------------------- ° ------------------------------- ° 
+
 ### 2.3.4 Sistema con 3 poleas (Más complejo) 
 
 Cuando se añade una tercera polea (como en un sistema con poleas de tensión), se incrementa la cantidad de elementos rotacionales que aportan inercia reflejada al motor. El modelo se vuelve más complejo y se requiere evaluar todas las inercia rotacionales reflejadas:
@@ -244,6 +246,8 @@ $$J_{ref} =J_{DR} +J_{load-in}+J_{belt-in}+J_{ID-in} +J_{BR-in}$$   (25)
 * $$J_{BR-in}$$ Inercia reflejada de la polea de retorno.
 * La inercia de la banda considera su masa distribuida.
 * La inercia de la carga reflejada es igual que en un sistema de dos poleas.
+
+  foto
 
 ### 2.3.5 Diferencias de sistemas 
 
