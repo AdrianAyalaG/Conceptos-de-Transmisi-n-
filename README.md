@@ -199,7 +199,7 @@ $$f_{ext}= 63.038+120.89= 183.928 N$$
 
 Teniendo en cuenta la ecuación (21) :
 
-$$T_{load\to in}=\frac{183.928}{(0.85)(60}= 3.606 N * m$$
+$$T_{load\to in}=\frac{183.928}{(0.85)(60)}= 3.606 N * m$$
 
   
 ## 2.3 Banda transportadora 
@@ -224,6 +224,14 @@ Se presenta igual que con el tornillo guia y el sistema piñón-cremallera
 $$T_{load\to in}=\frac{F_{ext}}{\eta N_{BD}}$$ (24)
 
 * La fuerza externa total es igual a la que se emplea en el tornillo guia y el piñón -cremallera.
+
+#  📚 Ejercicio 3
+
+La inercia reflejada en la carga de un sistema de banda transportadora de alimentos, se tiene 8.34 N*m, con 98% de eficiencia y $$N_{BD}= 10$$. Cual es el valor de las fuerzas externas del sistema? 
+
+Solución: 
+
+$$F_{ext}= 8.34(0.98)(10)= 81.732 N$$
 
 ### 2.3.4 Sistema con 3 poleas (Más complejo) 
 
