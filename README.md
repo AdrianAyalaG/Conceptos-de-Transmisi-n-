@@ -8,10 +8,6 @@ El control de movimiento es una disciplina esencial en ingeniería mecatrónica 
 
 Al girar el tornillo, su rosca impulsa los dientes de la rueda dentada, provocando su rotación. A diferencia de los engranajes convencionales, en este sistema únicamente el tornillo puede mover la rueda, pero no viceversa. Esta característica lo convierte en una solución ideal para aplicaciones que requieren autobloqueo, es decir, que evitan el retroceso del movimiento de forma automática.
 
-![Figura 1](CT.jpg)
-
-Figura 1. Tornillo guia con acople.
-
 <img src="CT.jpg" alt="CT" width="500">
 Figura 1. Tornillo guia con acople.
 
@@ -19,21 +15,18 @@ Figura 1. Tornillo guia con acople.
 
 * ACME (Rosca): Presentan una eficiencia mecánica del 35-85%, caracterizándose por su bajo costo pero mayor fricción en comparación con otros sistemas. Existen dos configuraciones geométricas principales para sus roscas: cuadrada y trapezoidal. La versión cuadrada, aunque más económica, presenta limitaciones estructurales significativas, particularmente en los flancos de la rosca, donde los picos agudos son susceptibles a fatiga y fractura por cargas cíclicas, lo que compromete su vida útil. En contraste, el diseño trapezoidal ofrece superior resistencia mecánica al distribuir las tensiones de forma más uniforme a lo largo del perfil de la rosca, minimizando la concentración de esfuerzos. Esta ventaja estructural aunque no reduce el riesgo de fallo a futuro, garantiza un movimiento más suave y estable de la bandeja o carro, especialmente en aplicaciones con altas cargas dinámicas o ciclos de trabajo continuos.
 
-![Figura 2](C6.png)
-
-Figura 2. Rosca cuadrada y trapezoidal.
+<img src="C6.png" alt="C6" width="500">
+Figura 2.Rosca cuadrada y trapezoidal.
   
 * Tornillos de Esferas (Ball Screws): Eficiencias del 85-95% en tornillos de bolas (vs 35-85% en ACME), menor fricción gracias al contacto rodante, y backlash reducido que garantiza posicionamiento preciso.
   
-![Figura 2](C1.png)
-
-Figura 3. Tornillo guia ACME y Ball Screw 
+<img src="C1.png" alt="C1" width="500">
+Figura 3.Tornillo guia ACME y Ball Screw 
 
 * El backlash, también conocido como juego mecánico u holgura, es el pequeño espacio libre entre los dientes de dos elementos engranados, como un tornillo sin fin y una rueda dentada, o entre engranajes rectos. Este fenómeno se origina por tolerancias de fabricación, la necesidad de lubricación, el desgaste natural del sistema y el diseño intencionado para evitar bloqueos por expansión térmica o sobrecargas. Aunque es inevitable en cierto grado, el backlash puede afectar negativamente la precisión de sistemas de control, CNC, robótica o servoactuadores, provocando retardo en el movimiento cuando se invierte el sentido de giro (juego en reversa), así como ruidos y vibraciones si es excesivo. Además, está relacionado con un fenómeno de torsión en la cadena cinemática, en el que, momentáneamente, no se transmite fuerza de forma efectiva debido a la discontinuidad generada por esta holgura.
   
-![Figura 3](C2.png)
-
-Figura 4. Backlash.
+<img src="C2.png" alt="C2" width="500">
+Figura 4.Backlash 
 
 ### 2.1.2 Relación de Transmisión 
 * Paso (Lead): Distancia lineal por revolución, en otras palabras, es la relación de cuanto se mueve la capsula cuando el tornillo de una vuelta
@@ -158,14 +151,11 @@ $$J_{ref}= 5.42x10^-8 + \frac{1}{0.9*(8.38)^{2}}(\frac{50+0.23}{9.804})= ​0.08
 
 Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se utiliza un modelo de un tornillo de paso 2mm y 4 hilos. Se añade los parámetros de Lead Screw Joint y una plancha para que se vea el movimiento lineal que realiza mientras el tornillo rota. 
 
-![Figura 8](P1.jpeg)
+<img src="P1.jpeg" alt="P1" width="500">
+Figura 5.  Simulink del tornillo guia
 
-Figura 4. Simulink del tornillo guia
-
-![Figura 9](P2.jpeg)
-
-Figura 5. Tornillo guia funcional.
-
+<img src="P2.jpeg" alt="P2" width="500">
+Figura 6.  Tornillo guia funcional.
 
 ## 2.2 Sistema Piñón - Cremallera
 >🔑 ¿Qué es?: Mecanismo que convierte movimiento rotacional (piñón) en lineal (cremallera) mediante engrane directo. La cremallera casi siempre es metálica para soportar cargas pesadas y es por ello, que este tipo de transmisión es ideal para aplicaciones que requieren precisión y fuerza en ejes lineales.
