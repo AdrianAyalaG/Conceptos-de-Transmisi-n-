@@ -8,7 +8,7 @@ El control de movimiento es una disciplina esencial en ingeniería mecatrónica 
 
 Al girar el tornillo, su rosca impulsa los dientes de la rueda dentada, provocando su rotación. A diferencia de los engranajes convencionales, en este sistema únicamente el tornillo puede mover la rueda, pero no viceversa. Esta característica lo convierte en una solución ideal para aplicaciones que requieren autobloqueo, es decir, que evitan el retroceso del movimiento de forma automática.
 
-![Figura 1](CT.png)
+![Figura 1](CT.jpg)
 
 Figura 1. Tornillo guia con acople.
 
