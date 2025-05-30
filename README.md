@@ -19,9 +19,13 @@ Figura 1. Tornillo guia con acople.
 * Tornillos de Esferas (Ball Screws): Eficiencias del 85-95% en tornillos de bolas (vs 35-85% en ACME), menor fricción gracias al contacto rodante, y backlash reducido que garantiza posicionamiento preciso.
 * El backlash, también conocido como juego mecánico u holgura, es el pequeño espacio libre entre los dientes de dos elementos engranados, como un tornillo sin fin y una rueda dentada, o entre engranajes rectos. Este fenómeno se origina por tolerancias de fabricación, la necesidad de lubricación, el desgaste natural del sistema y el diseño intencionado para evitar bloqueos por expansión térmica o sobrecargas. Aunque es inevitable en cierto grado, el backlash puede afectar negativamente la precisión de sistemas de control, CNC, robótica o servoactuadores, provocando retardo en el movimiento cuando se invierte el sentido de giro (juego en reversa), así como ruidos y vibraciones si es excesivo. Además, está relacionado con un fenómeno de torsión en la cadena cinemática, en el que, momentáneamente, no se transmite fuerza de forma efectiva debido a la discontinuidad generada por esta holgura.
   
+![Figura 2](C1.png)
 
-foto ball screws y rosca 
-foto backlash
+Figura 2. 
+
+![Figura 3](C2.png)
+
+Figura 3. 
 
 ### 2.1.2 Relación de Transmisión 
 * Paso (Lead): Distancia lineal por revolución, en otras palabras, es la relación de cuanto se mueve la capsula cuando el tornillo de una vuelta
