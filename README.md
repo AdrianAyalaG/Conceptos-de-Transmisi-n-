@@ -155,7 +155,7 @@ $$J_{ref}= 5.42x10^-8 + \frac{1}{0.9*(8.38)^{2}}(\frac{50+0.23}{9.804})= ​0.08
 
 Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se utiliza un modelo de un tornillo de paso 2mm y 4 hilos. Se añade los parámetros de Lead Screw Joint y una plancha para que se vea el movimiento lineal que realiza mientras el tornillo rota. 
 
-![Figura 4](C5.jpeg)
+![Figura 8](C5.jpeg)
 
 Figura 4. 
 
