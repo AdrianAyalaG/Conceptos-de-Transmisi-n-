@@ -277,4 +277,4 @@ La transmisión en un tornillo sin fin, determinada por el número de hilos del 
 
 # 4. Referencias 
 [1] "Login aulas 2025”, Edu.co. [En línea]. Disponible en: https://aulas.ecci.edu.co/mod/resource/view.php?id=217554. [Consultado: 29-may-2025].
-[2] “Redirect notice,” Google.com. [Online]. Available: https://www.google.com/url sa=i&url=https%3A%2F%2Fimsystems.nl%2Fes%2Fbacklash%2F&psig=AOvVaw1T9LGyrsfeJfI5j9KDIrL0&ust=1748657364012000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCJD_87mOyo0DFQAAAAAdAAAAABAE. [Accessed: 29-May-2025].
+[2] “Redirect notice,” Google.com. [Online]. Available: https://imsystems.nl/es/backlash/. [Accessed: 29-May-2025].
