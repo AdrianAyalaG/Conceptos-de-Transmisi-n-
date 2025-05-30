@@ -151,18 +151,17 @@ $$J_{ref}= 5.42x10^-8 + \frac{1}{0.9*(8.38)^{2}}(\frac{50+0.23}{9.804})= ​0.08
 
 Este ejemplo hecho por MathWorks modela un tornillo de avance con fricción. Se utiliza un modelo de un tornillo de paso 2mm y 4 hilos. Se añade los parámetros de Lead Screw Joint y una plancha para que se vea el movimiento lineal que realiza mientras el tornillo rota. 
 
-![Figura 4](C3.png)
+![Figura 4](C3.jpeg)
 
 Figura 4. 
 
-![Figura 5](C4.png)
-
-Figura 5. 
 
 ## 2.2 Sistema Piñón - Cremallera
 >🔑 ¿Qué es?: Mecanismo que convierte movimiento rotacional (piñón) en lineal (cremallera) mediante engrane directo. La cremallera casi siempre es metálica para soportar cargas pesadas y es por ello, que este tipo de transmisión es ideal para aplicaciones que requieren precisión y fuerza en ejes lineales.
 
-foto
+![Figura 5](C4.png)
+
+Figura 5. Piñón-cremallera. 
 
 ### 2.2.1 Relación de Transmisión 
 >🔑 ¿Qué es?: Define cómo la velocidad angular del piñón $$w_{pinion}$$ se traduce en velocidad lineal de la cremallera $$V_{rack}$$
